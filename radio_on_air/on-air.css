@@ -1,6 +1,15 @@
 .on-air {
-  height: 400px;
   width: 320px;
+ }
+
+ .on-air__now__details{
+    color: grey;
+        padding: 0 16px;
+ }
+ .recently_played_message{
+   padding: 0 16px;
+   color: grey;
+
  }
 .on-air .on-air__schedule-link {
 
@@ -68,10 +77,11 @@
     min-width: default;
     max-width: 806px;
     background-color: #ffffff;
-    padding: 0; }
+    padding: 0;
+    height: 235px;
+    }
    .on-air .on-air__now__wrap {
-    display: block;
-    float: left; }
+    display: block; }
      .on-air .on-air__now__wrap .on-air__now__details {
       padding: 12px 16px;
       color: rgba(49, 53, 62, 0.7); }
@@ -137,11 +147,6 @@
   display: none;
   visibility: hidden; }
 
-@media only screen and (min-width: 769px) and (max-width: 896px) {
-   .on-air .on-air__listen-live__mobile-wrap {
-    display: none; }
-   .on-air .on-air__listen-live__wrap {
-    width: 35%; } }
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
    .on-air .on-air__listen-live__wrap {
@@ -154,13 +159,7 @@
      .on-air .on-air__listen-live__mobile-wrap .on-air__episode-image {
       display: block;
       visibility: visible; }
-     .on-air .on-air__listen-live__mobile-wrap .on-air__listen-live--button {
-      position: absolute;
-      display: block;
-      visibility: visible;
-      bottom: 10px;
-      width: 100%;
-      text-align: center; }
+
        .on-air .on-air__listen-live__mobile-wrap .on-air__listen-live--button .on-air__listen-live--cta {
         text-align: center;
         background-color: rgba(122, 0, 0, 0.7);
@@ -172,43 +171,8 @@
    .on-air #mp {
     left: 5%; } }
 
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-   .on-air .on-air__listen-live--button {
-    bottom: 20px; }
-     .on-air .on-air__listen-live--button .on-air__listen-live--cta {
-      width: 70%; } }
 
- .on-air__track-playing__wrap {
-  display: block;
-  float: right;
-  padding: 12px 16px; }
-   .on-air__track-playing__wrap .on-air__track-now-playing {
-    color: rgba(49, 53, 62, 0.7); }
-   .on-air__track-playing__wrap .on-air__now__details {
-    position: relative;
-    padding-right: 35px; }
-     .on-air__track-playing__wrap .on-air__now__details .on-air__track-now-playing__playlister {
-      position: absolute;
-      top: 3px;
-      right: 0;
-      width: 32px;
-      height: 32px; }
-   .on-air__track-playing__wrap h4 {
-    font-weight: bold;
-    color: inherit;
-    padding-bottom: 12px; }
-     .on-air__track-playing__wrap h4 .hidden {
-      display: none; }
-
-@media only screen and (min-width: 769px) and (max-width: 896px) {
-   .on-air__track-playing__wrap {
-    float: none;
-    width: 100%; }
-     .on-air__track-playing__wrap .on-air__track-now-playing h4,
-     .on-air__track-playing__wrap .on-air__track-now-playing > .on-air__now__details {
-      padding-left: 16px; } }
-
-@media only screen and (min-width: 480px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
    .on-air__track-playing__wrap {
     width: 50%; } }
 
@@ -264,9 +228,10 @@
     overflow-y: hidden;
     overflow-x: auto;
     position: relative;
-    left: 170px;
+    left: 0;
     background-color: rgba(49, 53, 62, 0.7);
-    width: calc(100% - 170px); }
+    width: 100% ;
+}
      .on-air .on-air__container li {
       min-width: 350px;
       max-width: 376px;
@@ -275,7 +240,10 @@
       display: inline-block;
       vertical-align: top;
       border-left: 1px solid #ffffff;
-      padding: 12px 16px; }
+      padding: 12px 16px;
+      height: 210px;
+      font-size: 14px;
+    }
        .on-air .on-air__container li:first-child {
         border-left: 0; }
        .on-air .on-air__container li:after {
@@ -288,11 +256,12 @@
      .on-air .on-air__container .on-air__episode-link {
       display: block; }
    .on-air .on-air__logo-container {
-    width: 170px;
+    width: 40%;
     height: 100%;
-    background-color: rgba(49, 53, 62, 0.7);
     position: absolute;
-    z-index: 999; }
+    z-index: 999;
+    top:0;
+    }
      .on-air .on-air__logo-container:before {
       position: absolute;
       content: "";
@@ -309,7 +278,7 @@
     margin-top: -8px;
     z-index: 999; }
      .on-air .on-air__logo img {
-      width: auto;
+      width: 70%;
       height: 145px; }
    .on-air .on-air__episode-image {
     display: block; }
