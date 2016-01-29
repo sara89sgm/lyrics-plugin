@@ -3,12 +3,24 @@
   "description": "Check and listen to BBC Radio from every page",
   "version": "1.0",
   "permissions": [
-    "tabs", "http://*/*", "https://*/*"
+    "tabs", "http://*/*", "https://*/*", "http://nhp-service.test.api.bbci.co.uk/realtime/bbc_radio_two"
   ],
   "browser_action": {
       "default_title": "BBC Radio",
       "default_icon": "icon.png",
       "default_popup": "popup.html"
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+
+  "permissions": ["http://localhost/*"],
+    "web_accessible_resources": [
+        "assets/js/require.js",
+                "assets/js/main.js",
+                "assets/js/jquery-3.0.0.js",
+                "assets/js/on-air-now.js",
+                "assets/js/on-air.js",
+                "assets/js/on-air-paddles.js",
+                "assets/js/on-air-schedule.js",
+                "assets/js/pollingv2.js"
+    ]
 }
