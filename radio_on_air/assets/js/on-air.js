@@ -1,7 +1,5 @@
         function OnAir() {
             this.onAirNow = new OnAirNow();
-            this.onAirSchedule = new OnAirSchedule();
-            this.onAirSchedule.calculateListElementHeight();
         };
 
         OnAir.prototype.calculateElementHeight = function () {
