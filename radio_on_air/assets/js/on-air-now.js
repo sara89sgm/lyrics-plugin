@@ -72,7 +72,8 @@
         this.livePid = newBroadcastData.pid;
 
         var newContainerOnAirNow = $( ".on-air-now" ).clone( true );
-        newContainerOnAirNow.find( ".on-air__listen-live__wrap" ).css( "background-image", "url(http://ichef.bbci.co.uk/images/ic/640x360/" + newBroadcastData.imagePID + ".jpg)" );
+        $( ".on-air" ).find( ".on-air__episode-image" ).attr( "src", "http://ichef.bbci.co.uk/images/ic/320x180/p03gy4xz.jpg" );
+
         newContainerOnAirNow = this.updateEpisode( newBroadcastData, newContainerOnAirNow );
 
         var oldContainerOnAirNow = $( ".on-air-now" );
