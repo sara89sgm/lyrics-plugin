@@ -1,6 +1,9 @@
- .on-air .on-air__schedule-link {
+.on-air {
   height: 400px;
   width: 320px;
+ }
+.on-air .on-air__schedule-link {
+
   text-align: center;
   display: flex;
   align-items: center;
@@ -111,7 +114,6 @@
  .on-air .on-air__listen-live__wrap {
   display: block;
   float: left;
-  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
