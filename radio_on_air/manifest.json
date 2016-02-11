@@ -1,18 +1,18 @@
 {
-  "name": "BBC Radio Chrome Extension",
-  "description": "Check and listen to BBC Radio from every page",
+  "name": "BBC Radio LYRICS",
+  "description": "Lyrics for BBC Radio",
   "version": "1.0",
   "permissions": [
-    "tabs", "http://*/*", "https://*/*", "http://nhp-service.test.api.bbci.co.uk/realtime/bbc_radio_two"
+    "tabs", "http://*/*", "https://*/*", "http://nhp-service.test.api.bbci.co.uk/realtime/bbc_radio_two", "http://http://api.musixmatch.com/ws/1.1/*"
   ],
   "browser_action": {
       "default_title": "BBC Radio",
       "default_icon": "icon.png",
       "default_popup": "popup.html"
   },
-  "manifest_version": 2,
+  "manifest_version": 3,
 
-  "permissions": ["http://localhost/*",  "notifications"],
+  "permissions": ["http://localhost/*",  "notifications", "*://*/*"],
     "web_accessible_resources": [
         "assets/js/require.js",
                 "assets/js/main.js",

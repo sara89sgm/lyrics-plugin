@@ -1,25 +1,11 @@
 
+    var liveRecordId = "0";
 
-    var livePid = "";
-    var liveRecordId = "";
-    var liveRecordStatus = "";
 
     function OnAirNow() {
-        this.moveToOnAirShow();
         this.subscribeEvent();
-        this.livePid = $( ".on-air-now .on-air__episode-link" ).attr( "data-episode-pid" );
-        this.liveRecordId = $( ".on-air__track-now-playing" ).attr( "data-istats-record_id" );
-        this.liveRecordStatus = "recently_played";
     }
-    function show(newTrack) {
-      var time = /(..)(:..)/.exec(new Date());     // The prettyprinted time.
-      var hour = time[1] % 12 || 12;               // The prettyprinted hour.
-      var period = time[1] < 12 ? 'a.m.' : 'p.m.'; // The period of the day.
-      new Notification(hour + time[2] + ' ' + period, {
-        icon: '48.png',
-        body: newTrack.title+' '+newTrack.artist+''
-      });
-    }
+
 
     /**
      * The subscribeEvent function add a listener to receive an event when the
@@ -32,6 +18,7 @@
 
         $( document ).on( "ipr-richtracks-updated", function ( event, data ) {
             if ( data[ 0 ].record_id != _this.liveRecordId ) {
+                console.log(data[ 0 ].record_id);
                 _this.updateTrackNowPlaying( data[ 0 ] );
             } 
         } );
@@ -48,20 +35,60 @@
 
         var _this = this;
         this.liveRecordId = newTrack.record_id;
+        this.findNewTrackID(newTrack);
 
     };
 
-    OnAirNow.prototype.setNewTrackLyrics = function ( newTrack ) {
+    OnAirNow.prototype.findNewTrackID = function ( newTrack ) {
 
+        var _this = this;
+        var query = 'track.search?q_track='+encodeURIComponent(newTrack.title)+'&q_artist='+encodeURIComponent(newTrack.artist)+'&f_has_lyrics=1&apikey=d4781aecd95154f53277337bb66fcb88';
+        console.log(query);
+        $.ajax( {
+            type: 'GET',
+            crossDomain: true,
+            url: 'http://api.musixmatch.com/ws/1.1/' + query,
+            cache: true,
+            dataType: 'json',
+            context: _this,
+            success: function ( data ) {
+                console.log(data);
+                _this.getLyrics(data.message.body.track_list[0].track.track_id);
+            },
+            error: function ( error ) {
+                console.log(error);
+            }
 
+        } );
 
     };
 
-    OnAirNow.prototype.searchMusixmatchTrack = function ( newTrack ) {
+    OnAirNow.prototype.getLyrics = function ( trackID ) {
 
+        var _this = this;
+        var query = 'track.lyrics.get?track_id='+trackID+'&apikey=d4781aecd95154f53277337bb66fcb88';
+        $.ajax( {
+            type: 'GET',
+            crossDomain: true,
+            url: 'http://api.musixmatch.com/ws/1.1/' + query,
+            cache: true,
+            dataType: 'json',
+            context: _this,
+            success: function ( data ) {
+                _this.setLyrics(data.message.body.lyrics.lyrics_body);
+            },
+            error: function ( error ) {
+                console.log(error);
+            }
 
+        } );
 
     };
+
+    OnAirNow.prototype.setLyrics = function (lyrics){
+        $(".lyrics-div").html(lyrics);
+        console.log(lyrics);
+    }
 
 
 
