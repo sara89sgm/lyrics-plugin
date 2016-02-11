@@ -32,6 +32,9 @@
      */
 
     OnAirNow.prototype.updateTrackNowPlaying = function ( newTrack ) {
+        console.log(newTrack);
+
+        $(".artist-div").html("<h1>" + newTrack.title + " - " + newTrack.artist + " </h1><img src='http://" + newTrack.image.pid.replace("$recipe", "96x96") + "'>");
 
         var _this = this;
         this.liveRecordId = newTrack.record_id;
@@ -86,6 +89,7 @@
     };
 
     OnAirNow.prototype.setLyrics = function (lyrics){
+        lyrics = lyrics.replace("...\n\n******* This Lyrics is NOT for Commercial use *******", "").replace(/\n/g, "<br>");
         $(".lyrics-div").html(lyrics);
         console.log(lyrics);
     }

@@ -15,12 +15,13 @@
   "permissions": ["http://localhost/*",  "notifications", "*://*/*"],
     "web_accessible_resources": [
         "assets/js/require.js",
-                "assets/js/main.js",
-                "assets/js/jquery-3.0.0.js",
-                "assets/js/on-air-now.js",
-                "assets/js/on-air.js",
-                "assets/js/on-air-paddles.js",
-                "assets/js/on-air-schedule.js",
-                "assets/js/pollingv2.js"
+        "assets/js/main.js",
+        "assets/js/jquery-3.0.0.js",
+        "assets/js/on-air-now.js",
+        "assets/js/on-air.js",
+        "assets/js/on-air-paddles.js",
+        "assets/js/on-air-schedule.js",
+        "assets/js/pollingv2.js",
+        "assets/img/ajax-loader.gif"
     ]
 }
