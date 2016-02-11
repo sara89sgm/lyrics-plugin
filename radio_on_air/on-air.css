@@ -6,7 +6,7 @@
     color: grey;
         padding: 0 16px;
  }
- .recently_played_message{
+ .recently_played_message, .now_playing_message{
    padding: 0 16px;
    color: grey;
 
@@ -174,7 +174,7 @@
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
    .on-air__track-playing__wrap {
-    width: 50%; } }
+    width: 100%; } }
 
  .on-air__track-playing__wrap .on-air__track-now-playing__playlister .p-f-p_playlister {
   width: 100%;

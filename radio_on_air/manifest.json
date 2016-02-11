@@ -12,7 +12,7 @@
   },
   "manifest_version": 2,
 
-  "permissions": ["http://localhost/*"],
+  "permissions": ["http://localhost/*",  "notifications"],
     "web_accessible_resources": [
         "assets/js/require.js",
                 "assets/js/main.js",
